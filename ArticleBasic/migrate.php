@@ -21,7 +21,7 @@
     $item->created_on = $article['artdate'];
     $item->show = $article['artshow'] == 't' ? 1 : 0;
     $item->show_order = $article['artshoworder'];
-    $sql = "SELECT pageid FROM tblartpage WHERE articlid=?";
+    $sql = "SELECT pageid FROM tblartpage WHERE articleid=?";
     $pages = $db->getCol($sql, $item->id);
     $item->smc_associated_pages = $pages;
     $item->save();
