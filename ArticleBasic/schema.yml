@@ -1,0 +1,30 @@
+plugin Article:
+  section Articles:
+    Title: PB_TEXT
+    Show: PB_BOOLEAN
+    Show Order: PB_NUMBER
+    Location:
+      type: PB_SELECT
+      choices:
+        - Accordion
+        - Body
+        - Home Intro
+        - Intro
+        - Siderail
+    Hide Title: PB_BOOLEAN
+    Body: PB_TEXT
+  section Image:
+    Image: PB_IMAGE
+    Image Position:
+      type: PB_RADIO
+      choices:
+        - Left
+        - Right
+    Full Size: PB_BOOLEAN
+  section Associations:
+    SMC Associated Pages:
+      type: PB_SELECT
+      pb_lookup_table: tblpage
+      pb_lookup_schema: public
+      pb_lookup_pk: pageid
+      pb_lookup_fmt: "[pagename] (pid: [pageid])"
