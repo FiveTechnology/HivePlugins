@@ -1,0 +1,184 @@
+plugin SMC Order:
+  provides_authentication: false
+  section Info:
+    Session Key:
+    Order No: PB_NUMBER
+    Email:
+    Order Date:
+      type: PB_DATE_TIME
+      default: now()
+      implement_as: date
+    Customer Note:
+      implement_as: textarea
+    Order Note:
+      implement_as: textarea
+    Tax: PB_CURRENCY
+    PO Number:
+    Statuses:
+      type: PB_RELATIONSHIP
+      parent: true
+      relationship: many-many
+      plugin: SMC Order Status
+      field: My Orders
+    IP Address:
+      search_weight: B
+    IP Zip Code:
+    Cancel Reason:
+    Cancel Date: PB_DATE_TIME
+    Text Search:
+  section Billing:
+    Bill Name:
+    Bill Address:
+    Bill Address2:
+    Bill City:
+    Bill State:
+    Bill Phone:
+    Bill Zip:
+    Bill Country:
+    Promo Code:
+    Promo Discount: PB_CURRENCY
+    Promo:
+      type: PB_RELATIONSHIP
+      plugin: SMC Promo
+    Transactions:
+      type: PB_RELATIONSHIP
+      parent: true
+      relationship: 1-many
+      plugin: SMC Transaction
+      field: Parent Order
+  section Items:
+    Line Items:
+      type: PB_RELATIONSHIP
+      parent: true
+      relationship: 1-many
+      delete: true
+      plugin: SMC Order Item
+      field: Order
+  section Shipping:
+    Ship Name:
+    Ship Address:
+    Ship Address2:
+    Ship City:
+    Ship State:
+    Ship Zip:
+    Ship Country:
+    Freight: PB_CURRENCY
+    Ship Date: PB_DATE_TIME
+    Carrier:
+    Tracking Num:
+    Ship Phone:
+    Pickup: PB_BOOLEAN
+    Pickup Zip:
+    Estimated Ship Date: PB_DATE_TIME
+
+plugin SMC Order Item:
+  section Info:
+    Product Id: PB_NUMBER
+    Detail:
+    Price: PB_CURRENCY
+    Quantity: PB_NUMBER
+    SKU:
+    MFG_PN:
+    Taxable: PB_BOOLEAN
+    Option Id: PB_NUMBER
+    Note:
+    Sub Total: PB_NUMBER
+  section Shipping:
+    Weight: PB_NUMBER
+    Shipping & Handling: PB_CURRENCY
+    SH Per Quantity: PB_BOOLEAN
+    In Store Pickup:
+    Ship Date: PB_DATE_TIME
+    Tracking Number:
+    Carrier:
+    Can Pickup: PB_BOOLEAN
+    Flat Freight: PB_NUMBER
+    Pickup Date: PB_DATE_TIME
+    Pickup Notes:
+    Pickup Name:
+    Pickup Confirmation:
+    Pickup Location:
+    Pickup Employee:
+
+plugin SMC Order Status:
+  property show_id_list: true
+  section Info:
+    Status:
+    Show Order:
+    My Orders:
+      type: PB_RELATIONSHIP
+      pb_exclude_from_default_edit: true
+  item 1:
+    id: 1
+    status: Cart
+  item 2:
+    id: 2
+    status: New
+    show_order: 0
+  item 3:
+    id: 3
+    status: Processing
+    show_order: 1
+  item 4:
+    id: 4
+    status: Complete
+    show_order: 4
+  item 5:
+    id: 5
+    status: Pickup Ready
+    show_order: 3
+  item 6:
+    id: 6
+    status: Cancelled
+    show_order: 5
+  item 7:
+    id: 7
+    status: In-Store Pick up
+    show_order: 2
+
+plugin SMC Promo:
+  section Info:
+    Title: PB_TEXT
+    Code: PB_TEXT
+    Discount: PB_CURRENCY
+    Discount Type:
+      type: PB_RADIO
+      choices:
+        Dollars: 135
+        Percent: 136
+    Applies To:
+      type: PB_SELECT
+      choices:
+        - Each Item
+        - Order Total
+        - Shipping
+    Start Date: PB_DATE_TIME
+    Expire Date: PB_DATE_TIME
+    No Expiration: PB_BOOLEAN
+    Minimum Order Amount: PB_CURRENCY
+    One Use: PB_BOOLEAN
+    Carry Balance: PB_BOOLEAN
+    Order:
+      type: PB_RELATIONSHIP
+      parent: true
+      plugin: SMC Order
+      field: Promo
+      relationship: 1-many
+    Limit Quantity: PB_NUMBER
+    Balance: PB_CURRENCY
+
+plugin SMC Transaction:
+  section Info:
+    Credit Card:
+    Card Type:
+    Type:
+      type: PB_SELECT
+    Response Code:
+    Response Text:
+    Parent Order:
+      type: PB_RELATIONSHIP
+      plugin: SMC Order
+    Amount: PB_CURRENCY
+    Transaction Id:
+    Processed: PB_BOOLEAN
+
