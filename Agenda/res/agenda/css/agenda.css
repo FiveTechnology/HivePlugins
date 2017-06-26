@@ -1,0 +1,202 @@
+/*
+  See : http://www.w3schools.com/cssref/pr_list-style-type.asp for full
+  list of styles
+
+  upper-roman
+  lower-roman
+  upper-alpha
+  lower-alpha
+  decimal
+*/
+
+/*
+@page {
+  margin: 20px 50px 20px 50px;
+  font-family: "Times New Roman";
+}
+*/
+
+a {
+  text-decoration: underline
+}
+
+
+body{
+  margin:0px;
+  padding:0px;
+  font-family: sans-serif;
+}
+
+img {
+  margin: 3px;
+  cursor: pointer;
+}
+
+.agenda li {
+  font-family: Verdana,Arial;
+  font-size: 12pt;
+  margin: 5px 0 15px 0;
+  padding-bottom: 15px;
+}
+
+.note {
+  font-weight: normal;
+  text-transform: none;
+}
+
+.agenda ul li {
+  list-style-type: disc;
+}
+
+.agenda ol li {
+  xpadding-bottom: 20px;
+  margin: 0;
+}
+
+.agenda ol {
+  list-style-type: decimal;
+  padding-top: 15px;
+}
+
+.agenda ol li ol li {
+  list-style-type: lower-alpha;
+  text-transform: none;
+  font-weight: normal;
+}
+
+.agenda ol li ol li ol li {
+  list-style-type: upper-roman;
+  page-break-inside: avoid;
+}
+
+.agenda ol li ol li ol li ol li {
+  list-style-type: lower-latin;
+  page-break-inside:avoid;
+}
+
+.agenda ol li ol li ol li ol li ol li {
+  list-style-type: lower-roman;
+  page-break-inside:avoid;
+}
+
+/* Print PDF */
+#pdf li.top{margin: 100px 0 300px 0;}
+
+#pdf a {
+  color:black;
+  text-decoration:none;
+  cursor:default;
+}
+
+/*#pdf #span-print {margin:300px 0 100px 0;}*/
+#pdf .span-print {
+  display:inline-block;
+  margin-top: 0;
+}
+#pdf ol > li > ol > li .span-print {
+  display: inline-block; margin-top: -4px;
+}
+#pdf #note-print {
+  margin:10px 0 30px 0;
+}
+#pdf #motion-print {
+  margin:10px 0 10px 0;
+}
+
+#pdf #header{
+  text-align: center;
+  margin:0 0 0 125px;
+}
+
+#pdf #members{
+  text-align: center;
+}
+
+#pdf #members p{
+  padding:0;
+  margin:0;
+}
+
+h1 { font-size: 20px;color:#004D7E;margin: 0 0 10px 0;padding:0; }
+h2 { font-size: 16px;margin: 10px 0; }
+h3 { font-size: 14px;margin: 10px 0; }
+
+.header {
+  border-bottom: 1px solid black;
+}
+
+.date {
+  margin: 5px 0 20px 0;
+  font-size: 16px;
+  font-weight:bold;
+}
+
+.header .members {
+  margin:0;
+}
+
+.header .members center {
+  line-height: 28px;
+}
+
+.header .logo {
+  width:85px;
+  font-size:12px;
+  overflow:hidden;
+}
+
+table {
+  border-collapse:collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+.agenda-item-note {
+  -webkit-box-shadow: #DDD 0px 1px 2px;
+  position: relative;
+  background-color: #F4F39E;
+  border-color: #DEE184;
+  margin: 30px 0 20px 0;
+  padding: 15px 15px 10px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.25);
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.25);
+  font-style: italic;
+}
+
+.agenda-item-motion {
+  -webkit-box-shadow: #DDD 0px 1px 2px;
+  position: relative;
+  background-color: #5897fb;
+  border-color: #0000ff;
+  margin: 30px 0 20px 0;
+  padding: 15px 5px 10px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.25);
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.25);
+  font-style: italic;
+}
+
+.sticky.taped:after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 30px;
+  top: -21px;
+  left: 30%;
+  border: 1px solid #fff;
+  background: rgba(254, 254, 254, .6);
+  -webkit-box-shadow: 0px 0 3px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 0 3px rgba(0,0,0,0.1);
+  box-shadow: 0px 0 3px rgba(0,0,0,0.1);
+}
+.sticky.taped.motion {
+  background-color: #e0bca0;
+}
+
+.hover {
+  background-color: #009999;
+}

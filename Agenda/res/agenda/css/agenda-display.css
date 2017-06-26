@@ -1,0 +1,21 @@
+/* Display HTML*/
+
+#content #display ol{
+	margin: 0 0 0 0;
+}
+
+#content #display ol li { 
+ 	list-style-type: decimal; 
+ 	/*text-transform: uppercase;*/ 
+ 	font-weight: bold;
+}
+
+#content #display ol li ol li { list-style-type: upper-alpha; text-transform: none; font-weight: normal;}
+#content #display ol li ol li ol li { list-style-type: decimal; page-break-inside:avoid;}
+#content #display ol li ol li ol li ol li { list-style-type: lower-latin; page-break-inside:avoid; }
+#content #display ol li ol li ol li ol li ol li { list-style-type: lower-roman; page-break-inside:avoid;}
+
+#content #display li {
+  font-size: 10pt;
+  margin: 10px;
+}

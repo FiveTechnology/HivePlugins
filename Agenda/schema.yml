@@ -1,0 +1,27 @@
+plugin Agenda:
+  section Main:
+    Title:
+    Date: PB_DATE_TIME
+    Items:
+      type: PB_RELATIONSHIP
+      parent: true
+      relationship: 1-many
+      plugin: Agenda Items
+      field: Agenda
+
+plugin Agenda Items:
+  section Main:
+    Item Text:
+    Motion:
+    Note:
+    Sort Order: PB_NUMBER
+    Agenda:
+      type: PB_RELATIONSHIP
+    Parent Item:
+      type: PB_RELATIONSHI
+      parent: true
+      relationship: 1-many
+      plugin: Agenda Items
+      field: Sub Items
+    Sub Items:
+      type: PB_RELATIONSHIP
