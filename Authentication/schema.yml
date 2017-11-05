@@ -1,0 +1,30 @@
+plugin Authentication:
+  pb_provides_authentication: true
+  section Authentication:
+    Auth Username:
+      type: PB_TEXT
+      field_label: Username
+      prefix: false
+    Auth Password:
+      type: PB_TEXT
+      field_label: Password
+      prefix: false
+    Auth Salt:
+    Auth Login Count:
+      type: PB_NUMBER
+      prefix: false
+    Auth Last Login Date: PB_DATE_TIME
+    Auth Last Login IP:
+    Auth Verified:
+      type: PB_BOOLEAN
+      prefix: false
+    Auth Temp Password:
+      type: PB_TEXT
+      prefix: false
+    Auth Temp Salt:
+    Auth Temp Password Date:
+      type: PB_DATE_TIME
+      prefix: false
+    Auth Email:
+      type: PB_TEXT
+      prefix: false
