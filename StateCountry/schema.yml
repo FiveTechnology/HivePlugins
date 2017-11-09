@@ -1,0 +1,20 @@
+plugin Country:
+  section Information:
+    Name:
+    Code:
+    Code 3:
+    States:
+      type: PB_RELATIONSHIP
+      relationship: 1-many
+      plugin: State
+      field: Country
+plugin State:
+  section Information:
+    Code:
+    Country Code:
+    State Name:
+    Type:
+    Code 3:
+    Country:
+      type: PB_RELATIONSHIP
+
