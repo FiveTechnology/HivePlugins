@@ -1,0 +1,16 @@
+plugin Member:
+  section Date:
+    First Name:
+      type: PB_TEXT
+      pb_show_on_listing: true
+    Last Name:
+      type: PB_TEXT
+      pb_show_on_listing: true
+    Email:
+      type: PB_TEXT
+      pb_show_on_listing: true
+    Gender:
+    IP Address:
+    Text:
+  data: members.csv
+
