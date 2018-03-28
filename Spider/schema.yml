@@ -1,0 +1,4 @@
+plugin Spider:
+  section Main:
+    URL:
+    Crawled: PB_BOOLEAN
