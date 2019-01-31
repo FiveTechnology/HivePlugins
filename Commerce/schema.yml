@@ -168,9 +168,19 @@ plugin SMC Promo:
     Balance: PB_CURRENCY
 
 plugin SMC Transaction:
+  section Billing:
+    First Name:
+    Last Name:
+    Email:
+    Phone:
+    Address:
+    City:
+    State:
+    Zip:
   section Info:
     Credit Card:
     Card Type:
+    Expiration Date:
     Type:
       type: PB_SELECT
     Response Code:
@@ -180,5 +190,8 @@ plugin SMC Transaction:
       plugin: SMC Order
     Amount: PB_CURRENCY
     Transaction Id:
+    Reference Id:
+    Invoice Number:
     Processed: PB_BOOLEAN
+    Success: PB_BOOLEAN
 
